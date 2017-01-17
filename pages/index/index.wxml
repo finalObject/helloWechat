@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto" hidden="{{false}}">
+    <text class="user-motto" id="{{userId}}">{{motto}}</text>
+  </view>
+  <view wx:if="{{flag}}">
+    <text class="user-id">TRUE</text>
+  </view>
+  <view wx:else>
+    <text class="user-id">FALSE</text>
+  </view>
+  <view wx:for="{{array}}" wx:for-item="item" wx:key="index">
+    <text id="index-{{index}}">{{index}}:{{item.message}}</text>
+  </view>
+</view>
