@@ -3,36 +3,19 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    userId: '123',
-    flag: false,
-    array: [{
-      message: 'hello'
-    },
-    {
-      message: 'Sweetie'
-    },
-    {
-      message: '!'
-    }
-    ]
+
   },
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onLoad: function () {
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function (userInfo) {
-      //更新数据
-      that.setData({
-        userInfo: userInfo
-      })
-    })
+  loadData: function () {
+    wx.request({
+      url: 'http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=10',
+      header: {
+        "Content-Type": "application/json"
+      },
+      success: function (res) {
+        console.log("res.data");
+        var data = res.data;
+      }
+    });
   }
 
 

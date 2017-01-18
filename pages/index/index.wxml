@@ -1,4 +1,7 @@
+
 <!--index.wxml-->
 <view class="container">
- 
+  <view>
+    <button type="primary" bindtap="loadData">Load Data</button>
+  </view>
 </view>
