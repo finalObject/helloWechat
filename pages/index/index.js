@@ -3,20 +3,23 @@
 var app = getApp()
 Page({
   data: {
-
+    newsdata: ''
   },
+
   loadData: function () {
+    var that = this;
     wx.request({
-      url: 'http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=10',
+      url: 'http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=10', //仅为示例，并非真实的接口地址
+
       header: {
-        "Content-Type": "application/json"
+        'content-type': 'application/json'
       },
       success: function (res) {
-        console.log("res.data");
-        var data = res.data;
+        console.log(res.data);
+        that.setData({
+          newsdata: res.data
+        });
       }
-    });
+    })
   }
-
-
 })
