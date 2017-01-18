@@ -12,13 +12,5 @@ Page({
         return util.formatTime(new Date(log))
       })
     })
-    console.log(app.globalData.userInfo);
-  },
-  onShow:function(){
-    console.log(app.globalData.userInfo);
-    lucky.printLog("niuniu");
-  },
-  onPullDownRefresh: function () {
-    console.log("__refresh");
   }
 })

@@ -33,12 +33,7 @@ Page({
         userInfo: userInfo
       })
     })
-  },
-  onPullDownRefresh: function () {
-    console.log("__refresh");
-  },
-  onShow: function () {
-    //app.globalData.userInfo="finalobject.cn";
-    console.log("change!!");
   }
+
+
 })
